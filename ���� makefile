@@ -1,0 +1,6 @@
+run : main.o 
+	gcc -o run main.o
+main.o : quick_sort.c
+	gcc -c quick_sort.c
+clean :
+	rm run main.o
