@@ -1,0 +1,4 @@
+*.ncb
+*.bak
+Debug/
+quicksort/Debug/
