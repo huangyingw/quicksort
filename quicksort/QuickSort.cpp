@@ -57,7 +57,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	fout.open("output.txt");
 	for (int i=1; i<=20; i++)
      {
-           fout << "µÚ" << i << "ÐÐ\n" ;
+           fout << "The " << i << " Line\n" ;
 
      }
 
