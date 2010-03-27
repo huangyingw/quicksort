@@ -29,17 +29,8 @@ void QuickSort(int* list,int left,int right,int index)
 			if(i<j)
 			{
 				temp=list[i];
-				list[i]=list[j];//½»»»list[i],list[j]µÄÖµ
+				list[i]=list[j];
 				list[j]=temp;
-				/*
-				fout<<"current sorting result:";
-				for(k=0;k<index;k++)
-				{
-					fout<<list[k];
-				}
-				fout<<"pivot:"<<pivot;
-				fout<<endl;
-				*/
 			}
 		}while(i<j);
 		temp=list[left];
@@ -62,7 +53,7 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	
 	fout.open("output.txt");
-	int list[10]={9,8,7,6,5,4,3,2,1,0};
+	int list[10]={5,8,7,6,9,4,3,2,1,0};
 	int index=10;
 	QuickSort(list,0,index-1,index);
 	fout.close();
