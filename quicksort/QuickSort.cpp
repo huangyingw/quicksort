@@ -6,6 +6,7 @@
 #include <fstream>
 
 using namespace std;
+ofstream fout; 
 void QuickSort(int* list,int left,int right,int index)
 {
 	int i,j,k;
@@ -42,7 +43,7 @@ void QuickSort(int* list,int left,int right,int index)
 		temp=list[left];
 		list[left]=list[j];
 		list[j]=temp;
-		cout<<"current sorting result:";
+		fout << "current sorting result:\n" ;
 		for(k=0;k<index;k++)cout<<list[k];
 		cout<<"->pivot:"<<pivot;
 		cout<<endl;
@@ -53,19 +54,12 @@ void QuickSort(int* list,int left,int right,int index)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	ofstream fout; 
+	
 	fout.open("output.txt");
-	for (int i=1; i<=20; i++)
-     {
-           fout << "The " << i << " Line\n" ;
-
-     }
-
-     fout.close();
-
 	int list[10]={9,8,7,6,5,4,3,2,1,0};
 	int index=10;
 	QuickSort(list,0,index-1,index);
+	fout.close();
 	return 0;
 }
 
