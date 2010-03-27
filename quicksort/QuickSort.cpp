@@ -31,6 +31,7 @@ void QuickSort(int* list,int left,int right,int index)
 				temp=list[i];
 				list[i]=list[j];//½»»»list[i],list[j]µÄÖµ
 				list[j]=temp;
+				/*
 				fout<<"current sorting result:";
 				for(k=0;k<index;k++)
 				{
@@ -38,6 +39,7 @@ void QuickSort(int* list,int left,int right,int index)
 				}
 				fout<<"pivot:"<<pivot;
 				fout<<endl;
+				*/
 			}
 		}while(i<j);
 		temp=list[left];
