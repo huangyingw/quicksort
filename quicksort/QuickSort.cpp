@@ -3,6 +3,8 @@
 
 #include "stdafx.h"
 #include<iostream>
+#include <fstream>
+
 using namespace std;
 void QuickSort(int* list,int left,int right,int index)
 {
@@ -51,6 +53,8 @@ void QuickSort(int* list,int left,int right,int index)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	ofstream fout; 
+	fout.open("output.txt");
 	int list[10]={9,8,7,6,5,4,3,2,1,0};
 	int index=10;
 	QuickSort(list,0,index-1,index);
