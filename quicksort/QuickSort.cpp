@@ -31,22 +31,23 @@ void QuickSort(int* list,int left,int right,int index)
 				temp=list[i];
 				list[i]=list[j];//½»»»list[i],list[j]µÄÖµ
 				list[j]=temp;
-				cout<<"current sorting result:";
+				fout<<"current sorting result:";
 				for(k=0;k<index;k++)
 				{
-					cout<<list[k];
+					fout<<list[k];
 				}
-				cout<<"pivot:"<<pivot;
-				cout<<endl;
+				fout<<"pivot:"<<pivot;
+				fout<<endl;
 			}
 		}while(i<j);
 		temp=list[left];
 		list[left]=list[j];
 		list[j]=temp;
 		fout << "current sorting result:\n" ;
-		for(k=0;k<index;k++)cout<<list[k];
-		cout<<"->pivot:"<<pivot;
-		cout<<endl;
+		for(k=0;k<index;k++)
+			fout<<list[k];
+		fout<<"->pivot:"<<pivot;
+		fout<<endl;
 		QuickSort(list,left,j-1,index);
 		QuickSort(list,j+1,right,index);
 	}
