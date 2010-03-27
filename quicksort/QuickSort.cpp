@@ -55,6 +55,14 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	ofstream fout; 
 	fout.open("output.txt");
+	for (int i=1; i<=20; i++)
+     {
+           fout << "µÚ" << i << "ÐÐ\n" ;
+
+     }
+
+     fout.close();
+
 	int list[10]={9,8,7,6,5,4,3,2,1,0};
 	int index=10;
 	QuickSort(list,0,index-1,index);
