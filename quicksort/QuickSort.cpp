@@ -42,7 +42,7 @@ void QuickSort(int* list,int left,int right,int index)
 		list[j]=temp;
 		cout<<"current sorting result:";
 		for(k=0;k<index;k++)cout<<list[k];
-		cout<<"pivot:"<<pivot;
+		cout<<"->pivot:"<<pivot;
 		cout<<endl;
 		QuickSort(list,left,j-1,index);
 		QuickSort(list,j+1,right,index);

@@ -1,4 +1,5 @@
 *.ncb
 *.bak
+*.suo
 Debug/
 quicksort/Debug/
