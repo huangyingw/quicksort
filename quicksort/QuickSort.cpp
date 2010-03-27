@@ -45,11 +45,14 @@ void QuickSort(int* list,int left,int right,int index)
 		temp=list[left];
 		list[left]=list[j];
 		list[j]=temp;
+		fout << "swap "<< list[left]<<"->"<<list[j]<<endl;
+		
 		fout << "current sorting result:\n" ;
 		for(k=0;k<index;k++)
 			fout<<list[k];
-		fout<<"->pivot:"<<pivot;
+		fout<<"->pivot:"<<pivot<<"->list[j]->"<<list[j];
 		fout<<endl;
+		
 		QuickSort(list,left,j-1,index);
 		QuickSort(list,j+1,right,index);
 	}
