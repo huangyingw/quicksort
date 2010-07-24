@@ -31,7 +31,12 @@ int Partition(int i,int j)
 		while(i<j&&data[i]<=pivot)
 			i++;
 		if(i<j)
-			data[j--]=data[i];
+		{
+			data[i]^=data[j];
+			data[j]^=data[i];
+			data[i]^=data[j];
+		}
+			
 		
 	}
 	data[i]=pivot;
