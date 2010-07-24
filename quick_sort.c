@@ -1,4 +1,3 @@
-// QuickSort.cpp :
 
 #include "quick_sort.h"
 
