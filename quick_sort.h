@@ -14,10 +14,7 @@ public:
 	QuickSort(int len);
 	~QuickSort();
 	void Initial();
-	void Sort();
-	void Merge(int l,int m,int r);
 	void Print();
-	void Divide(int len);
 	void Print();
 };
 
@@ -40,13 +37,13 @@ void QuickSort::Print()
 }
 
 
-void Finalize()
+void QuickSort::Finalize()
 {
 	delete(data);
 	fout.close();
 }
 
-int Partition(int i,int j)
+int QuickSort::Partition(int i,int j)
 {
 	int pivot=data[i];
 	while(i<j)
@@ -65,7 +62,7 @@ int Partition(int i,int j)
 	return i;
 }
 
-void Sort(int low,int high)//¹é²¢ÅÅÐò
+void QuickSort::Sort(int low,int high)//¹é²¢ÅÅÐò
 {
 	if(low<high)
 	{
