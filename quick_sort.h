@@ -7,7 +7,6 @@ int* data;
 int size;
 void Initial()
 {
-	//data= (int *) malloc (size * sizeof(int));
 	data= new int[size];
 }
 
