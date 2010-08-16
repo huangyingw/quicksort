@@ -7,7 +7,8 @@ int* data;
 int size;
 void Initial()
 {
-	data= (int *) malloc (size * sizeof(int));
+	//data= (int *) malloc (size * sizeof(int));
+	data= new int[size];
 }
 
 void Print()
@@ -21,7 +22,7 @@ void Print()
 
 void Finalize()
 {
-		free(data);
+		delete(data);
 }
 
 int Partition(int i,int j)
