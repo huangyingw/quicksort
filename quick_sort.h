@@ -52,7 +52,10 @@ void Sort(int low,int high)//πÈ≤¢≈≈–Ú
 	if(low<high)
 	{
 		int pivot;
+		
+		Print();
 		pivot=Partition(low,high);
+		Print();
 		
 		Sort(low,pivot-1);
 		Sort(pivot+1,high);
