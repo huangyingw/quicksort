@@ -8,6 +8,7 @@ int size;
 void Initial()
 {
 	data= new int[size];
+	fout.open("output.txt");
 }
 
 void Print()
@@ -21,7 +22,8 @@ void Print()
 
 void Finalize()
 {
-		delete(data);
+	delete(data);
+	fout.close();
 }
 
 int Partition(int i,int j)
@@ -49,6 +51,7 @@ void Sort(int low,int high)//πÈ≤¢≈≈–Ú
 	{
 		int pivot;
 		pivot=Partition(low,high);
+		
 		Sort(low,pivot-1);
 		Sort(pivot+1,high);
 	}
