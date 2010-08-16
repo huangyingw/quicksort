@@ -17,8 +17,11 @@ void Print()
 	for(i=0;i<size;i++)
 	{
 		printf("%d ", data[i]);
+		fout<<data[i];
 	}
+	fout<<endl;
 }
+
 
 void Finalize()
 {

@@ -18,6 +18,7 @@ int main()
 	Sort(0,6);
 	Print();	
 	cout<<endl;
+	Finalize();
 	return 0;
 }
 
