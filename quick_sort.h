@@ -2,6 +2,27 @@
 #include <iostream>
 using namespace std;
 
+
+class QuickSort
+{
+private:
+	int length;
+	ofstream fout; 
+
+public:
+	int* data;
+	QuickSort(int len);
+	~QuickSort();
+	void Initial();
+	void Sort();
+	void Merge(int l,int m,int r);
+	void Print(int l,int r);
+	void Divide(int len);
+	void Print();
+};
+
+
+
 ofstream fout;
 int* data;
 int size;
@@ -56,6 +77,7 @@ void Sort(int low,int high)//πÈ≤¢≈≈–Ú
 		Print();
 		pivot=Partition(low,high);
 		Print();
+		fout<<"fuck your mother"<<endl;	
 		
 		Sort(low,pivot-1);
 		Sort(pivot+1,high);
