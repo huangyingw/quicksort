@@ -16,7 +16,7 @@ public:
 	void Initial();
 	void Sort();
 	void Merge(int l,int m,int r);
-	void Print(int l,int r);
+	void Print();
 	void Divide(int len);
 	void Print();
 };
@@ -29,7 +29,7 @@ void QuickSort::Initial()
 	fout.open("output.txt");
 }
 
-void Print()
+void QuickSort::Print()
 {
 	int i;
 	for(i=0;i<size;i++)
