@@ -6,7 +6,7 @@ using namespace std;
 class QuickSort
 {
 private:
-	int length;
+	int size;
 	ofstream fout; 
 
 public:
@@ -23,10 +23,7 @@ public:
 
 
 
-ofstream fout;
-int* data;
-int size;
-void Initial()
+void QuickSort::Initial()
 {
 	data= new int[size];
 	fout.open("output.txt");
