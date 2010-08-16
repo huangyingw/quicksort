@@ -1,6 +1,8 @@
 // QuickSort.cpp :
-
+#include <fstream>
+#include <iostream>
 #include "quick_sort.h"
+using namespace std;
 
 int main()
 {
@@ -15,6 +17,7 @@ int main()
   data[6]=3;
 	Sort(0,6);
 	Print();	
+	cout<<endl;
 	return 0;
 }
 

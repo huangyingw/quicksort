@@ -1,3 +1,8 @@
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+ofstream fout;
 int* data;
 int size;
 void Initial()
