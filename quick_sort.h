@@ -16,7 +16,6 @@ void Print()
 	int i;
 	for(i=0;i<size;i++)
 	{
-		printf("%d ", data[i]);
 		fout<<data[i];
 	}
 	fout<<endl;
@@ -53,7 +52,10 @@ void Sort(int low,int high)//¹é²¢ÅÅÐò
 	if(low<high)
 	{
 		int pivot;
+		
+		Print();
 		pivot=Partition(low,high);
+		Print();
 		
 		Sort(low,pivot-1);
 		Sort(pivot+1,high);
