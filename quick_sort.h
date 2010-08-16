@@ -6,22 +6,21 @@ using namespace std;
 class QuickSort
 {
 private:
-	int size;
 	ofstream fout; 
 
 public:
 	int* data;
+	int size;
 	QuickSort(int len);
 	~QuickSort();
-	void Initial();
-	void Print();
 	void Print();
 };
 
 
 
-void QuickSort::Initial()
+void QuickSort::QuickSort(int len)
 {
+	size=len;
 	data= new int[size];
 	fout.open("output.txt");
 }
@@ -37,7 +36,7 @@ void QuickSort::Print()
 }
 
 
-void QuickSort::Finalize()
+void QuickSort::~QuickSort()
 {
 	delete(data);
 	fout.close();
