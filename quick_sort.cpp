@@ -1,0 +1,26 @@
+// QuickSort.cpp :
+#include <fstream>
+#include <iostream>
+#include "quick_sort.h"
+using namespace std;
+
+int main()
+{
+	QuickSort *qs=new QuickSort(7);
+	//qs.size=7;
+	/*
+	data[0]=0; 
+	data[1]=1;
+	data[2]=2;
+ 	data[3]=6;
+  data[4]=4;
+	data[5]=5;
+  data[6]=3;
+	Sort(0,6);
+	Print();	
+	cout<<endl;
+	Finalize();
+	*/
+	return 0;
+}
+

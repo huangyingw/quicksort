@@ -14,11 +14,12 @@ public:
 	QuickSort(int len);
 	~QuickSort();
 	void Print();
+	void Sort(int low,int high)//πÈ≤¢≈≈–Ú
 };
 
 
 
-void QuickSort::QuickSort(int len)
+QuickSort::QuickSort(int len)
 {
 	size=len;
 	data= new int[size];
@@ -36,7 +37,7 @@ void QuickSort::Print()
 }
 
 
-void QuickSort::~QuickSort()
+QuickSort::~QuickSort()
 {
 	delete(data);
 	fout.close();
