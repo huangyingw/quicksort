@@ -66,11 +66,10 @@ void QuickSort::Sort(int low,int high)//πÈ≤¢≈≈–Ú
 	if(low<high)
 	{
 		int pivot;
-		
+		cout<<"1"<<endl;
 		Print();
 		pivot=Partition(low,high);
 		Print();
-		fout<<"fuck your mother"<<endl;	
 		
 		Sort(low,pivot-1);
 		Sort(pivot+1,high);
