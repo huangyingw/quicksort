@@ -14,10 +14,9 @@ public:
 	QuickSort(int len);
 	~QuickSort();
 	void Print();
-	void Sort(int low,int high)//πÈ≤¢≈≈–Ú
+	void Sort(int low,int high);//πÈ≤¢≈≈–Ú
+	int Partition(int i,int j);
 };
-
-
 
 QuickSort::QuickSort(int len)
 {
