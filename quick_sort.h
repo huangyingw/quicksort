@@ -2,16 +2,29 @@
 #include <iostream>
 using namespace std;
 
-ofstream fout;
-int* data;
-int size;
-void Initial()
+class QuickSort
 {
+  private:
+    ofstream fout; 
+
+  public:
+    int* data;
+    int size;
+    QuickSort(int len);
+    ~QuickSort();
+    void Print();
+    void Sort(int low,int high);//ï¿½é²¢ï¿½ï¿½ï¿½ï¿½
+    int Partition(int i,int j);
+};
+
+QuickSort::QuickSort(int len)
+{
+  size=len;
   data= new int[size];
   fout.open("output.txt");
 }
 
-void Print()
+void QuickSort::Print()
 {
   int i;
   for(i=0;i<size;i++)
@@ -24,13 +37,13 @@ void Print()
 }
 
 
-void Finalize()
+QuickSort::~QuickSort()
 {
   delete(data);
   fout.close();
 }
 
-int Partition(int i,int j)
+int QuickSort::Partition(int i,int j)
 {
   int pivot=data[i];
   while(i<j)
@@ -49,12 +62,11 @@ int Partition(int i,int j)
   return i;
 }
 
-void Sort(int low,int high)//¹é²¢ÅÅÐò
+void QuickSort::Sort(int low,int high)//ï¿½é²¢ï¿½ï¿½ï¿½ï¿½
 {
   if(low<high)
   {
     int pivot;
-
     Print();
     pivot=Partition(low,high);
     Print();
