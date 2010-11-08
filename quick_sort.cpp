@@ -17,7 +17,6 @@ int main()
   qs->data[6]=3;
   qs->Sort(0,6);
   qs->Print();	
-  cout<<endl;
 
   return 0;
 }
