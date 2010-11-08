@@ -17,8 +17,10 @@ void Print()
   for(i=0;i<size;i++)
   {
     fout<<data[i];
+    cout<<data[i];
   }
   fout<<endl;
+  cout<<endl;
 }
 
 
