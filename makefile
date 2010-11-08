@@ -1,4 +1,6 @@
-run : main.o 
-	g++ -o run main.o
-main.o : quick_sort.cpp
-	g++ -c -o main.o quick_sort.cpp
+OBJECTS = quick_sort.exe 
+
+include ../../GNU_makefile_template
+
+LOCFLAGS=-I ../quicksort
+
