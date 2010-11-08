@@ -66,7 +66,6 @@ void QuickSort::Sort(int low,int high)//πÈ≤¢≈≈–Ú
   if(low<high)
   {
     int pivot;
-    cout<<"1"<<endl;
     Print();
     pivot=Partition(low,high);
     Print();
