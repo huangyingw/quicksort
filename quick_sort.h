@@ -48,15 +48,15 @@ int QuickSort::Partition(int i,int j)
   int pivot=data[i];
   while(i<j)
   {
-    while(i<j&&data[j]>=pivot)
+    while(i<j&&data[j]>pivot)
       j--;
-    if(i<j)
-      data[i++]=data[j];
-    while(i<j&&data[i]<=pivot)
+    while(i<j&&data[i]<pivot)
       i++;
-    if(i<j)
-      data[j--]=data[i];
-
+    if(i<j) {
+      data[i]^=data[j];
+      data[j]^=data[i];
+      data[i]^=data[j];
+    }
   }
   data[i]=pivot;
   return i;
