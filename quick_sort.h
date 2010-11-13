@@ -5,7 +5,6 @@ using namespace std;
 class QuickSort
 {
   private:
-    ofstream fout; 
 
   public:
     int* data;
@@ -21,7 +20,6 @@ QuickSort::QuickSort(int len)
 {
   size=len;
   data= new int[size];
-  fout.open("output.txt");
 }
 
 void QuickSort::Print()
@@ -29,10 +27,8 @@ void QuickSort::Print()
   int i;
   for(i=0;i<size;i++)
   {
-    fout<<data[i];
     cout<<data[i];
   }
-  fout<<endl;
   cout<<endl;
 }
 
@@ -40,7 +36,6 @@ void QuickSort::Print()
 QuickSort::~QuickSort()
 {
   delete(data);
-  fout.close();
 }
 
 int QuickSort::Partition(int i,int j)
