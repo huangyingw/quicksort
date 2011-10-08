@@ -12,7 +12,7 @@ class QuickSort
     QuickSort(int len);
     ~QuickSort();
     void Print();
-    void Sort(int low,int high);//�鲢����
+    void Sort(int low,int high);
     int Partition(int i,int j);
 };
 
@@ -55,7 +55,7 @@ int QuickSort::Partition(int i,int j)
   return i;
 }
 
-void QuickSort::Sort(int low,int high)//�鲢����
+void QuickSort::Sort(int low,int high)
 {
   if(low<high)
   {
