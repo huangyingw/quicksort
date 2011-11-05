@@ -36,8 +36,6 @@ int Partition(int i,int j)
       data[j]^=data[i];
       data[i]^=data[j];
     }
-
-
   }
   data[i]=pivot;
   return i;
