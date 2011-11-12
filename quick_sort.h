@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 int* data;
 int size;
 void Initial()
