@@ -15,6 +15,17 @@ int main()
   Sort(0,6);
   Print();	
   printf("\n");
+  Initial();
+  data[0]=6; 
+  data[1]=5;
+  data[2]=4;
+  data[3]=3;
+  data[4]=2;
+  data[5]=1;
+  data[6]=0;
+  Sort(0,6);
+  Print();	
+  printf("\n");
   return 0;
 }
 
