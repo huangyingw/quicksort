@@ -17,6 +17,29 @@ int main()
   qs->data[6]=3;
   qs->Sort(0,6);
   qs->Print();
+  cout<<endl;
+
+  qs->data[0]=6;
+  qs->data[1]=5;
+  qs->data[2]=4;
+  qs->data[3]=3;
+  qs->data[4]=2;
+  qs->data[5]=1;
+  qs->data[6]=0;
+  qs->Sort(0,6);
+  qs->Print();
+  cout<<endl;
+  
+  qs->data[0]=0;
+  qs->data[1]=1;
+  qs->data[2]=2;
+  qs->data[3]=3;
+  qs->data[4]=4;
+  qs->data[5]=5;
+  qs->data[6]=6;
+  qs->Sort(0,6);
+  qs->Print();
+  cout<<endl;
 
   return 0;
 }
