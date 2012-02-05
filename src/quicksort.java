@@ -69,9 +69,8 @@ public class quicksort {
 	void Sort(int low, int high) {
 		if (low < high) {
 			int pivot;
-			// Print();
 			pivot = Partition(low, high);
-			// Print();
+			System.out.println(pivot);
 
 			Sort(low, pivot - 1);
 			Sort(pivot + 1, high);
