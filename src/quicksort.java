@@ -9,7 +9,7 @@ public class quicksort {
 		qs.data[5] = 5;
 		qs.data[6] = 3;
 		qs.Sort(0, 6);
-		qs.Print();
+		System.out.println(qs.toString());
 
 		qs.data[0] = 6;
 		qs.data[1] = 5;
@@ -19,7 +19,7 @@ public class quicksort {
 		qs.data[5] = 1;
 		qs.data[6] = 0;
 		qs.Sort(0, 6);
-		qs.Print();
+		System.out.println(qs.toString());
 
 		qs.data[0] = 0;
 		qs.data[1] = 1;
@@ -29,7 +29,7 @@ public class quicksort {
 		qs.data[5] = 5;
 		qs.data[6] = 6;
 		qs.Sort(0, 6);
-		qs.Print();
+		System.out.println(qs.toString());
 	}
 
 	private int[] data;
@@ -62,6 +62,14 @@ public class quicksort {
 		for (int i = 0; i < size; i++)
 			System.out.print(data[i]);
 		System.out.println();
+	}
+
+	public String toString() {
+		String result = new String();
+		for (int i = 0; i < data.length; i++) {
+			result += Integer.toString(data[i]) + ",";
+		}
+		return result;
 	}
 
 	void Sort(int low, int high) {
