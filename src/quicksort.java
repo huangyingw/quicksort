@@ -58,6 +58,12 @@ public class quicksort {
 		return i;
 	}
 
+	void Print(int left, int right) {
+		for (int i = left; i <= right; i++)
+			System.out.print(data[i]);
+		System.out.println();
+	}
+
 	public String toString() {
 		String result = new String();
 		for (int i = 0; i < data.length; i++) {
@@ -70,9 +76,13 @@ public class quicksort {
 		if (low < high) {
 			int pivot;
 			pivot = Partition(low, high);
-			System.out.println(pivot);
+			System.out.println("pivot->" + pivot);
 
+			System.out.print("left->");
+			Print(low, pivot - 1);
 			Sort(low, pivot - 1);
+			System.out.print("right->");
+			Print(pivot + 1, high);
 			Sort(pivot + 1, high);
 		}
 	}
