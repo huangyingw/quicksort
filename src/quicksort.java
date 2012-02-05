@@ -58,12 +58,6 @@ public class quicksort {
 		return i;
 	}
 
-	void Print() {
-		for (int i = 0; i < size; i++)
-			System.out.print(data[i]);
-		System.out.println();
-	}
-
 	public String toString() {
 		String result = new String();
 		for (int i = 0; i < data.length; i++) {
