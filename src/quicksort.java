@@ -1,16 +1,44 @@
 public class quicksort {
+	static public void main(String[] args) {
+		quicksort qs = new quicksort(7);
+		qs.data[0] = 0;
+		qs.data[1] = 1;
+		qs.data[2] = 2;
+		qs.data[3] = 6;
+		qs.data[4] = 4;
+		qs.data[5] = 5;
+		qs.data[6] = 3;
+		qs.Sort(0, 6);
+		qs.Print();
+
+		qs.data[0] = 6;
+		qs.data[1] = 5;
+		qs.data[2] = 4;
+		qs.data[3] = 3;
+		qs.data[4] = 2;
+		qs.data[5] = 1;
+		qs.data[6] = 0;
+		qs.Sort(0, 6);
+		qs.Print();
+
+		qs.data[0] = 0;
+		qs.data[1] = 1;
+		qs.data[2] = 2;
+		qs.data[3] = 3;
+		qs.data[4] = 4;
+		qs.data[5] = 5;
+		qs.data[6] = 6;
+		qs.Sort(0, 6);
+		qs.Print();
+	}
+
 	private int[] data;
+
 	int size;
 
 	public quicksort(int len) {
 		size = len;
 		data = new int[size];
-	}
-
-	void Print() {
-		for (int i = 0; i < size; i++)
-			System.out.print(data[i]);
-		System.out.println();
 	}
 
 	int Partition(int i, int j) {
@@ -30,48 +58,21 @@ public class quicksort {
 		return i;
 	}
 
+	void Print() {
+		for (int i = 0; i < size; i++)
+			System.out.print(data[i]);
+		System.out.println();
+	}
+
 	void Sort(int low, int high) {
 		if (low < high) {
 			int pivot;
-			//Print();
+			// Print();
 			pivot = Partition(low, high);
-			//Print();
+			// Print();
 
 			Sort(low, pivot - 1);
 			Sort(pivot + 1, high);
 		}
-	}
-
-	static public void main(String[] args) {
-		quicksort qs = new quicksort(7);
-		qs.data[0] = 0;
-		qs.data[1] = 1;
-		qs.data[2] = 2;
-		qs.data[3] = 6;
-		qs.data[4] = 4;
-		qs.data[5] = 5;
-		qs.data[6] = 3;
-		qs.Sort(0, 6);
-		qs.Print();
-		
-		qs.data[0] = 6;
-		qs.data[1] = 5;
-		qs.data[2] = 4;
-		qs.data[3] = 3;
-		qs.data[4] = 2;
-		qs.data[5] = 1;
-		qs.data[6] = 0;
-		qs.Sort(0, 6);
-		qs.Print();
-		
-		qs.data[0] = 0;
-		qs.data[1] = 1;
-		qs.data[2] = 2;
-		qs.data[3] = 3;
-		qs.data[4] = 4;
-		qs.data[5] = 5;
-		qs.data[6] = 6;
-		qs.Sort(0, 6);
-		qs.Print();
 	}
 }
