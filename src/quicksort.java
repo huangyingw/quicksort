@@ -68,6 +68,8 @@ public class quicksort {
 		if (low < high) {
 			int pivot;
 			pivot = Partition(low, high);
+			System.out.print("current->");
+			Print(low, high);
 			System.out.println("pivot->" + pivot);
 
 			System.out.print("left->");
@@ -75,6 +77,7 @@ public class quicksort {
 			Sort(low, pivot - 1);
 			System.out.print("right->");
 			Print(pivot + 1, high);
+			System.out.println();
 			Sort(pivot + 1, high);
 		}
 	}
