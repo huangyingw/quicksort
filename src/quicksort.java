@@ -13,7 +13,6 @@ public class quicksort {
 		quicksort.count = 0;
 		qs.Sort(0, 6);
 		System.out.println(qs.toString());
-		System.out.println(quicksort.count);
 
 		qs.data[0] = 6;
 		qs.data[1] = 5;
@@ -25,7 +24,6 @@ public class quicksort {
 		quicksort.count = 0;
 		qs.Sort(0, 6);
 		System.out.println(qs.toString());
-		System.out.println(quicksort.count);
 
 		qs.data[0] = 0;
 		qs.data[1] = 1;
@@ -37,7 +35,6 @@ public class quicksort {
 		quicksort.count = 0;
 		qs.Sort(0, 6);
 		System.out.println(qs.toString());
-		System.out.println(quicksort.count);
 	}
 
 	private int[] data;
@@ -63,7 +60,6 @@ public class quicksort {
 				count++;
 			}
 		}
-		data[i] = pivot;
 		return i;
 	}
 
