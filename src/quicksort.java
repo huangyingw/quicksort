@@ -8,8 +8,10 @@ public class quicksort {
 		qs.data[4] = 4;
 		qs.data[5] = 5;
 		qs.data[6] = 3;
+		quicksort.count = 0;
 		qs.Sort(0, 6);
 		System.out.println(qs.toString());
+		System.out.println(quicksort.count);
 
 		qs.data[0] = 6;
 		qs.data[1] = 5;
@@ -18,8 +20,10 @@ public class quicksort {
 		qs.data[4] = 2;
 		qs.data[5] = 1;
 		qs.data[6] = 0;
+		quicksort.count = 0;
 		qs.Sort(0, 6);
 		System.out.println(qs.toString());
+		System.out.println(quicksort.count);
 
 		qs.data[0] = 0;
 		qs.data[1] = 1;
@@ -28,11 +32,14 @@ public class quicksort {
 		qs.data[4] = 4;
 		qs.data[5] = 5;
 		qs.data[6] = 6;
+		quicksort.count = 0;
 		qs.Sort(0, 6);
 		System.out.println(qs.toString());
+		System.out.println(quicksort.count);
 	}
 
 	private int[] data;
+	private static int count = 0;
 
 	int size;
 
@@ -44,14 +51,15 @@ public class quicksort {
 	int Partition(int i, int j) {
 		int pivot = data[i];
 		while (i < j) {
-			while (i < j && data[j] > pivot)
+			while (data[j] > pivot)
 				j--;
-			while (i < j && data[i] < pivot)
+			while (data[i] < pivot)
 				i++;
 			if (i < j) {
 				data[i] ^= data[j];
 				data[j] ^= data[i];
 				data[i] ^= data[j];
+				count++;
 			}
 		}
 		data[i] = pivot;
