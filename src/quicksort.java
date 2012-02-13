@@ -6,8 +6,8 @@ public class quicksort {
 		qs.data[0] = 3;
 		qs.data[1] = 1;
 		qs.data[2] = 2;
-		qs.data[3] = 6;
-		qs.data[4] = 0;
+		qs.data[3] = 0;
+		qs.data[4] = 6;
 		qs.data[5] = 5;
 		qs.data[6] = 4;
 		quicksort.count = 0;
