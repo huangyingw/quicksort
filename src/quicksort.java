@@ -58,22 +58,20 @@ public class quicksort {
 		return i;
 	}
 
+	void Sort(int low, int high) {
+		if (low < high) {
+			int pivot;
+			pivot = Partition(low, high);
+			Sort(low, pivot - 1);
+			Sort(pivot + 1, high);
+		}
+	}
+
 	public String toString() {
 		String result = new String();
 		for (int i = 0; i < data.length; i++) {
 			result += Integer.toString(data[i]) + ",";
 		}
 		return result;
-	}
-
-	void Sort(int low, int high) {
-		if (low < high) {
-			int pivot;
-			pivot = Partition(low, high);
-			System.out.println(pivot);
-
-			Sort(low, pivot - 1);
-			Sort(pivot + 1, high);
-		}
 	}
 }
