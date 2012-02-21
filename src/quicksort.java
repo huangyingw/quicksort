@@ -1,8 +1,10 @@
-public class quicksort {
+import java.lang.reflect.Array;
+
+public class quicksort<T extends Comparable<T>> {
 	private static int count = 0;
 
 	static public void main(String[] args) {
-		quicksort qs = new quicksort(7);
+		quicksort<Integer> qs = new quicksort<Integer>(7);
 		qs.data[0] = 3;
 		qs.data[1] = 1;
 		qs.data[2] = 2;
@@ -37,26 +39,27 @@ public class quicksort {
 		System.out.println(qs.toString());
 	}
 
-	private int[] data;
+	private T[] data;
 
 	int size;
 
 	public quicksort(int len) {
 		size = len;
-		data = new int[size];
+		//data = new T[size];
+		data=(T[]) Array.newInstance(componentType, length)
 	}
 
 	int Partition(int i, int j) {
-		int pivot = data[i];
+		T pivot = data[i];
 		while (i < j) {
-			while (data[j] > pivot)
+			while (data[j].compareTo(pivot) > 0)
 				j--;
-			while (data[i] < pivot)
+			while (data[i].compareTo(pivot) < 0)
 				i++;
 			if (i < j) {
-				data[i] ^= data[j];
-				data[j] ^= data[i];
-				data[i] ^= data[j];
+				T temp = data[j];
+				data[j] = data[i];
+				data[i] = temp;
 				count++;
 			}
 		}
@@ -75,7 +78,7 @@ public class quicksort {
 	public String toString() {
 		String result = new String();
 		for (int i = 0; i < data.length; i++) {
-			result += Integer.toString(data[i]) + ",";
+			result += data[i].toString() + ",";
 		}
 		return result;
 	}
