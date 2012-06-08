@@ -33,10 +33,10 @@ public class quicksort {
 				i++;
 			if (i < j) {
 				swap(i, j);
+				if (data[i] == pivot) {
+					swap(i, ++p);
+				}
 			}
-			// if (data[i] == pivot) {
-			// swap(i, ++p);
-			// }
 			// if (data[j] == pivot) {
 			// swap(j, --q);
 			// }
