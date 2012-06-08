@@ -46,12 +46,6 @@ public class quicksort {
 		data = new int[size];
 	}
 
-	void swap(int i, int j) {
-		data[i] ^= data[j];
-		data[j] ^= data[i];
-		data[i] ^= data[j];
-	}
-
 	int Partition(int i, int j) {
 		int pivot = data[i];
 		int p = i, q = j;
@@ -82,6 +76,12 @@ public class quicksort {
 			Sort(low, pivot - 1);
 			Sort(pivot + 1, high);
 		}
+	}
+
+	void swap(int i, int j) {
+		data[i] ^= data[j];
+		data[j] ^= data[i];
+		data[i] ^= data[j];
 	}
 
 	public String toString() {
