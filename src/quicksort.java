@@ -46,19 +46,31 @@ public class quicksort {
 		data = new int[size];
 	}
 
+	void swap(int i, int j) {
+		data[i] ^= data[j];
+		data[j] ^= data[i];
+		data[i] ^= data[j];
+	}
+
 	int Partition(int i, int j) {
 		int pivot = data[i];
+		int p = i, q = j;
 		while (i < j) {
 			while (data[j] > pivot)
 				j--;
+
 			while (data[i] < pivot)
 				i++;
 			if (i < j) {
-				data[i] ^= data[j];
-				data[j] ^= data[i];
-				data[i] ^= data[j];
+				swap(i, j);
 				count++;
 			}
+			// if (data[i] == pivot) {
+			// swap(i, ++p);
+			// }
+			// if (data[j] == pivot) {
+			// swap(j, --q);
+			// }
 		}
 		return i;
 	}
