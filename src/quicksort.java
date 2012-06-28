@@ -40,6 +40,10 @@ public class quicksort {
 		return i;
 	}
 
+	void Sort() {
+		Sort(0, data.length - 1);
+	}
+
 	void Sort(int low, int high) {
 		if (low < high) {
 			int pivot;
