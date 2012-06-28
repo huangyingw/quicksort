@@ -1,44 +1,5 @@
 public class quicksort {
-	private static int count = 0;
-
-	static public void main(String[] args) {
-		quicksort qs = new quicksort(7);
-		qs.data[0] = 3;
-		qs.data[1] = 1;
-		qs.data[2] = 2;
-		qs.data[3] = 0;
-		qs.data[4] = 6;
-		qs.data[5] = 5;
-		qs.data[6] = 4;
-		quicksort.count = 0;
-		qs.Sort(0, 6);
-		System.out.println(qs.toString());
-
-		qs.data[0] = 6;
-		qs.data[1] = 5;
-		qs.data[2] = 4;
-		qs.data[3] = 3;
-		qs.data[4] = 2;
-		qs.data[5] = 1;
-		qs.data[6] = 0;
-		quicksort.count = 0;
-		qs.Sort(0, 6);
-		System.out.println(qs.toString());
-
-		qs.data[0] = 0;
-		qs.data[1] = 1;
-		qs.data[2] = 2;
-		qs.data[3] = 3;
-		qs.data[4] = 4;
-		qs.data[5] = 5;
-		qs.data[6] = 6;
-		quicksort.count = 0;
-		qs.Sort(0, 6);
-		System.out.println(qs.toString());
-	}
-
-	private int[] data;
-
+	int[] data;
 	int size;
 
 	public quicksort(int len) {
@@ -46,21 +7,41 @@ public class quicksort {
 		data = new int[size];
 	}
 
+	public quicksort(int[] data, int size) {
+		super();
+		this.data = data;
+		this.size = size;
+	}
+
+	public quicksort(int[] data2) {
+		// TODO Auto-generated constructor stub
+		this.data = data2;
+	}
+
 	int Partition(int i, int j) {
 		int pivot = data[i];
+		int p = i, q = j;
 		while (i < j) {
 			while (data[j] > pivot)
 				j--;
+
 			while (data[i] < pivot)
 				i++;
 			if (i < j) {
-				data[i] ^= data[j];
-				data[j] ^= data[i];
-				data[i] ^= data[j];
-				count++;
+				swap(i, j);
+				if (data[i] == pivot) {
+					swap(i, ++p);
+				}
 			}
+			// if (data[j] == pivot) {
+			// swap(j, --q);
+			// }
 		}
 		return i;
+	}
+
+	void Sort() {
+		Sort(0, data.length - 1);
 	}
 
 	void Sort(int low, int high) {
@@ -70,6 +51,12 @@ public class quicksort {
 			Sort(low, pivot - 1);
 			Sort(pivot + 1, high);
 		}
+	}
+
+	void swap(int i, int j) {
+		data[i] ^= data[j];
+		data[j] ^= data[i];
+		data[i] ^= data[j];
 	}
 
 	public String toString() {
