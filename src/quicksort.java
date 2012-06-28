@@ -2,20 +2,10 @@ public class quicksort {
 	int[] data;
 	int size;
 
-	public quicksort(int len) {
-		size = len;
-		data = new int[size];
-	}
 
-	public quicksort(int[] data, int size) {
-		super();
-		this.data = data;
-		this.size = size;
-	}
-
-	public quicksort(int[] data2) {
+	public quicksort(int[] data) {
 		// TODO Auto-generated constructor stub
-		this.data = data2;
+		this.data = data;
 	}
 
 	int Partition(int i, int j) {
