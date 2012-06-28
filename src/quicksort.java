@@ -7,6 +7,17 @@ public class quicksort {
 		data = new int[size];
 	}
 
+	public quicksort(int[] data, int size) {
+		super();
+		this.data = data;
+		this.size = size;
+	}
+
+	public quicksort(int[] data2) {
+		// TODO Auto-generated constructor stub
+		this.data = data2;
+	}
+
 	int Partition(int i, int j) {
 		int pivot = data[i];
 		int p = i, q = j;
