@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class quicksort {
 	int[] data;
 	int size;
@@ -19,7 +21,9 @@ public class quicksort {
 	}
 
 	int Partition(int i, int j) {
-		int pivot = data[i];
+		Random random = new Random();
+		int s = random.nextInt(j) % (j - i + 1) + i;
+		int pivot = data[s];
 		int p = i, q = j;
 		while (i < j) {
 			while (data[j] > pivot)
@@ -29,9 +33,9 @@ public class quicksort {
 				i++;
 			if (i < j) {
 				swap(i, j);
-				if (data[i] == pivot) {
-					swap(i, ++p);
-				}
+				// if (data[i] == pivot) {
+				// swap(i, ++p);
+				// }
 			}
 			// if (data[j] == pivot) {
 			// swap(j, --q);
