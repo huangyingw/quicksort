@@ -2,7 +2,6 @@ public class quicksort {
 	int[] data;
 	int size;
 
-
 	public quicksort(int[] data) {
 		// TODO Auto-generated constructor stub
 		this.data = data;
@@ -26,6 +25,7 @@ public class quicksort {
 			// if (data[j] == pivot) {
 			// swap(j, --q);
 			// }
+			i = p;
 		}
 		return i;
 	}
