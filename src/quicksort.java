@@ -9,29 +9,34 @@ public class quicksort {
 		this.data = data;
 	}
 
-	int Partition(int i, int j) {
+	void Partition(int low, int high, Integer leftP, Integer rightP) {
 		Random random = new Random();
-		int s = random.nextInt(j) % (j - i + 1) + i;
-		int pivot = data[s];
-		int p = i, q = j;
-		while (i < j) {
-			while (data[j] > pivot)
-				j--;
-
-			while (data[i] < pivot)
-				i++;
-			if (i < j) {
-				swap(i, j);
-				// if (data[i] == pivot) {
-				// swap(i, ++p);
-				// }
+		// int s = random.nextInt(j) % (j - i + 1) + i;
+		// int pivot = data[s];
+		int pivot = data[low];
+		int p = low, q = high;
+		while (low < high) {
+			while (data[high] > pivot)
+				high--;
+			if (data[high] == pivot) {
+				swap(high--, p++);
+				continue;
 			}
-			// if (data[j] == pivot) {
-			// swap(j, --q);
-			// }
-			i = p;
+			while (data[low] < pivot)
+				low++;
+			if (data[low] == pivot) {
+				swap(low++, p++);
+				continue;
+			}
+			if (low < high) {
+				swap(low, high);
+			}
 		}
-		return i;
+		while (p > 0) {
+			swap(--p, --low);
+		}
+		leftP = low - 1;
+		rightP = high + 1;
 	}
 
 	void Sort() {
@@ -41,16 +46,20 @@ public class quicksort {
 	void Sort(int low, int high) {
 		if (low < high) {
 			int pivot;
-			pivot = Partition(low, high);
-			Sort(low, pivot - 1);
-			Sort(pivot + 1, high);
+			Integer leftP = 0;
+			Integer rightP = 0;
+			Partition(low, high, leftP, rightP);
+			Sort(low, leftP);
+			Sort(rightP, high);
 		}
 	}
 
 	void swap(int i, int j) {
-		data[i] ^= data[j];
-		data[j] ^= data[i];
-		data[i] ^= data[j];
+		if (i != j) {
+			data[i] ^= data[j];
+			data[j] ^= data[i];
+			data[i] ^= data[j];
+		}
 	}
 
 	public String toString() {
