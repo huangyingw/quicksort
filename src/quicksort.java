@@ -20,7 +20,6 @@ public class quicksort {
 
 	int Partition(int i, int j) {
 		int pivot = data[i];
-		int p = i, q = j;
 		while (i < j) {
 			while (data[j] > pivot)
 				j--;
@@ -29,13 +28,7 @@ public class quicksort {
 				i++;
 			if (i < j) {
 				swap(i, j);
-				if (data[i] == pivot) {
-					swap(i, ++p);
-				}
 			}
-			// if (data[j] == pivot) {
-			// swap(j, --q);
-			// }
 		}
 		return i;
 	}
