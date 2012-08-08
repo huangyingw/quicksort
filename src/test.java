@@ -3,6 +3,6 @@ public class test {
 		int[] data = { 3, 1, 2, 0, 6, 2, 5, 4 };
 		quicksort qs = new quicksort(data);
 		qs.Sort();
-		System.out.println(qs.toString());
+		//System.out.println(qs.toString());
 	}
 }

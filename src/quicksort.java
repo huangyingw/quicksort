@@ -2,6 +2,8 @@ import java.util.Random;
 
 public class quicksort {
 	int[] data;
+	private int leftP;
+	private int rightP;
 	int size;
 
 	public quicksort(int[] data) {
@@ -9,34 +11,45 @@ public class quicksort {
 		this.data = data;
 	}
 
-	void Partition(int low, int high, Integer leftP, Integer rightP) {
-		Random random = new Random();
+	void Partition(int low, int high) {
+		// Random random = new Random();
 		// int s = random.nextInt(j) % (j - i + 1) + i;
 		// int pivot = data[s];
+		System.out.print("the original data->");
+		Print(low, high);
 		int pivot = data[low];
-		int p = low, q = high;
-		while (low < high) {
-			while (data[high] > pivot)
-				high--;
-			if (data[high] == pivot) {
-				swap(high--, p++);
-				continue;
+		int left = low, right = high, store = left;
+		while (left < right) {
+			while (data[right] > pivot)
+				right--;
+			while (data[right] == pivot) {
+				swap(right--, store++);
 			}
-			while (data[low] < pivot)
-				low++;
-			if (data[low] == pivot) {
-				swap(low++, p++);
-				continue;
+			while (data[left] < pivot)
+				left++;
+			while (data[left] == pivot)
+				swap(left++, store++);
+			if (left < right) {
+				swap(left, right);
 			}
-			if (low < high) {
-				swap(low, high);
-			}
+			Print(low, high);
 		}
-		while (p > 0) {
-			swap(--p, --low);
+		while (store > 0) {
+			swap(store--, left--);
 		}
-		leftP = low - 1;
-		rightP = high + 1;
+		leftP = left - 1;
+		rightP = right + 1;
+		System.out.print("the left Partitioned data->");
+		Print(low, leftP);
+		System.out.print("the right Partitioned data->");
+		Print(rightP, high);
+	}
+
+	public void Print(int l, int r) {
+		for (int i = l; i <= r; i++) {
+			System.out.print(data[i] + ",");
+		}
+		System.out.println();
 	}
 
 	void Sort() {
@@ -46,9 +59,7 @@ public class quicksort {
 	void Sort(int low, int high) {
 		if (low < high) {
 			int pivot;
-			Integer leftP = 0;
-			Integer rightP = 0;
-			Partition(low, high, leftP, rightP);
+			Partition(low, high);
 			Sort(low, leftP);
 			Sort(rightP, high);
 		}
