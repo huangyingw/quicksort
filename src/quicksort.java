@@ -18,31 +18,32 @@ public class quicksort {
 		System.out.print("the original data->");
 		Print(low, high);
 		int pivot = data[low];
-		int left = low, right = high, store = left;
+		int left = low, right = high, leftStore = left, rightStore = right;
 		while (left < right) {
-			while (data[right] > pivot)
+			while (left < right && data[right] > pivot)
 				right--;
-			while (data[right] == pivot) {
-				swap(right--, store++);
+			while (right < rightStore && data[right] == pivot) {
+				swap(right--, rightStore--);
 			}
-			while (data[left] < pivot)
+			while (left < right && data[left] < pivot)
 				left++;
-			while (data[left] == pivot)
-				swap(left++, store++);
-			if (left < right) {
-				swap(left, right);
+			while (leftStore < left && data[left] == pivot) {
+				swap(left++, leftStore++);
 			}
-			Print(low, high);
+			if (left < right) {
+				swap(left++, right--);
+			}
 		}
-		while (store > 0) {
-			swap(store--, left--);
+		while (leftStore > low) {
+			swap(leftStore--, left--);
 		}
-		leftP = left - 1;
-		rightP = right + 1;
-		System.out.print("the left Partitioned data->");
-		Print(low, leftP);
-		System.out.print("the right Partitioned data->");
-		Print(rightP, high);
+		while (rightStore < high) {
+			swap(rightStore++, right++);
+		}
+	}
+
+	public void Print() {
+		Print(0, data.length - 1);
 	}
 
 	public void Print(int l, int r) {
@@ -67,9 +68,12 @@ public class quicksort {
 
 	void swap(int i, int j) {
 		if (i != j) {
+			System.out.println("swap " + data[i] + " and " + data[j]);
 			data[i] ^= data[j];
 			data[j] ^= data[i];
 			data[i] ^= data[j];
+			System.out.println("After swap");
+			Print();
 		}
 	}
 
