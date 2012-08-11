@@ -22,24 +22,36 @@ public class quicksort {
 		while (left < right) {
 			while (left < right && data[right] > pivot)
 				right--;
-			while (right < rightStore && data[right] == pivot) {
+			while (left < right && right < rightStore && data[right] == pivot) {
 				swap(right--, rightStore--);
+        System.out.println("After swap1");
+        Print(low,high);
 			}
 			while (left < right && data[left] < pivot)
 				left++;
-			while (leftStore < left && data[left] == pivot) {
+			while (left < right && leftStore < left && data[left] == pivot) {
 				swap(left++, leftStore++);
+        System.out.println("After swap2");
+        Print(low,high);
 			}
 			if (left < right) {
 				swap(left++, right--);
+        System.out.println("After swap3");
+        Print(low,high);
 			}
 		}
 		while (leftStore > low) {
 			swap(leftStore--, left--);
+      System.out.println("After swap4");
+      Print(low,high);
 		}
 		while (rightStore < high) {
 			swap(rightStore++, right++);
+      System.out.println("After swap5");
+      Print(low,high);
 		}
+		leftP = left - 1;
+		rightP = right + 1;
 	}
 
 	public void Print() {
@@ -72,8 +84,6 @@ public class quicksort {
 			data[i] ^= data[j];
 			data[j] ^= data[i];
 			data[i] ^= data[j];
-			System.out.println("After swap");
-			Print();
 		}
 	}
 
