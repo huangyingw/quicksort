@@ -1,16 +1,26 @@
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
 
 public class Log {
 	public static void main(String[] args) throws IOException {
-		BufferedWriter bw = new BufferedWriter(new FileWriter("log.txt", true));
-		String newStr = "新的内容\n";
-		bw.write(newStr, 0, newStr.length());
+		Log log = new Log("log.txt");
+		log.Append("I love you");
+	}
+
+	private BufferedWriter bw;
+
+	private String name;
+
+	public Log(String name) throws IOException {
+		super();
+		this.name = name;
+		bw = new BufferedWriter(new FileWriter(this.name, true));
+	}
+
+	public void Append(String line) throws IOException {
+		line += "\n";
+		bw.write(line, 0, line.length());
 		bw.flush();
-		bw.close();
 	}
 }
