@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Random;
 
 public class Quicksort {
@@ -5,10 +6,12 @@ public class Quicksort {
 	private int leftP;
 	private int rightP;
 	int size;
+	private Log log;
 
-	public Quicksort(int[] data) {
+	public Quicksort(int[] data, String name) throws IOException {
 		// TODO Auto-generated constructor stub
 		this.data = data;
+		log = new Log(name);
 	}
 
 	void Partition(int low, int high) {
@@ -24,31 +27,31 @@ public class Quicksort {
 				right--;
 			while (left < right && right < rightStore && data[right] == pivot) {
 				swap(right--, rightStore--);
-        System.out.println("After swap1");
-        Print(low,high);
+				System.out.println("After swap1");
+				Print(low, high);
 			}
 			while (left < right && data[left] < pivot)
 				left++;
 			while (left < right && leftStore < left && data[left] == pivot) {
 				swap(left++, leftStore++);
-        System.out.println("After swap2");
-        Print(low,high);
+				System.out.println("After swap2");
+				Print(low, high);
 			}
 			if (left < right) {
 				swap(left++, right--);
-        System.out.println("After swap3");
-        Print(low,high);
+				System.out.println("After swap3");
+				Print(low, high);
 			}
 		}
 		while (leftStore > low) {
 			swap(leftStore--, left--);
-      System.out.println("After swap4");
-      Print(low,high);
+			System.out.println("After swap4");
+			Print(low, high);
 		}
 		while (rightStore < high) {
 			swap(rightStore++, right++);
-      System.out.println("After swap5");
-      Print(low,high);
+			System.out.println("After swap5");
+			Print(low, high);
 		}
 		leftP = left - 1;
 		rightP = right + 1;
