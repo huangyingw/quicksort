@@ -1,12 +1,12 @@
 import java.util.Random;
 
-public class quicksort {
+public class Quicksort {
 	int[] data;
 	private int leftP;
 	private int rightP;
 	int size;
 
-	public quicksort(int[] data) {
+	public Quicksort(int[] data) {
 		// TODO Auto-generated constructor stub
 		this.data = data;
 	}
