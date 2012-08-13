@@ -17,7 +17,7 @@ public class Quicksort {
 		// Random random = new Random();
 		// int s = random.nextInt(j) % (j - i + 1) + i;
 		// int pivot = data[s];
-		log.Append("the original data->");
+		log.Appendln("the original data->");
 		Print(low, high);
 		int pivot = data[low];
 		int left = low, right = high, leftStore = left, rightStore = right;
@@ -26,30 +26,30 @@ public class Quicksort {
 				right--;
 			while (left < right && right < rightStore && data[right] == pivot) {
 				swap(right--, rightStore--);
-				log.Append("After swap1");
+				log.Appendln("After swap1");
 				Print(low, high);
 			}
 			while (left < right && data[left] < pivot)
 				left++;
 			while (left < right && leftStore < left && data[left] == pivot) {
 				swap(left++, leftStore++);
-				log.Append("After swap2");
+				log.Appendln("After swap2");
 				Print(low, high);
 			}
 			if (left < right) {
 				swap(left++, right--);
-				log.Append("After swap3");
+				log.Appendln("After swap3");
 				Print(low, high);
 			}
 		}
 		while (leftStore > low) {
 			swap(leftStore--, left--);
-			log.Append("After swap4");
+			log.Appendln("After swap4");
 			Print(low, high);
 		}
 		while (rightStore < high) {
 			swap(rightStore++, right++);
-			log.Append("After swap5");
+			log.Appendln("After swap5");
 			Print(low, high);
 		}
 		leftP = left - 1;
@@ -64,7 +64,7 @@ public class Quicksort {
 		for (int i = l; i <= r; i++) {
 			System.out.print(data[i] + ",");
 		}
-		log.Append();
+		log.Appendln();
 	}
 
 	void Sort() throws IOException {
@@ -82,7 +82,7 @@ public class Quicksort {
 
 	void swap(int i, int j) throws IOException {
 		if (i != j) {
-			log.Append("swap " + data[i] + " and " + data[j]);
+			log.Appendln("swap " + data[i] + " and " + data[j]);
 			data[i] ^= data[j];
 			data[j] ^= data[i];
 			data[i] ^= data[j];
