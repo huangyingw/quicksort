@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.Random;
 
 public class Quicksort {
 	int[] data;
@@ -14,11 +13,11 @@ public class Quicksort {
 		log = new Log(name);
 	}
 
-	void Partition(int low, int high) {
+	void Partition(int low, int high) throws IOException {
 		// Random random = new Random();
 		// int s = random.nextInt(j) % (j - i + 1) + i;
 		// int pivot = data[s];
-		System.out.print("the original data->");
+		log.Append("the original data->");
 		Print(low, high);
 		int pivot = data[low];
 		int left = low, right = high, leftStore = left, rightStore = right;
@@ -68,11 +67,11 @@ public class Quicksort {
 		System.out.println();
 	}
 
-	void Sort() {
+	void Sort() throws IOException {
 		Sort(0, data.length - 1);
 	}
 
-	void Sort(int low, int high) {
+	void Sort(int low, int high) throws IOException {
 		if (low < high) {
 			int pivot;
 			Partition(low, high);
