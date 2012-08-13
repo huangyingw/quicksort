@@ -34,4 +34,9 @@ public class Log {
 		bw.newLine();
 		bw.flush();
 	}
+
+	public void Append() throws IOException {
+		// TODO Auto-generated method stub
+		Append("\n");
+	}
 }

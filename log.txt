@@ -1,8 +1,44 @@
 the original data->
+
+
+swap 3 and 2
+After swap3
+
+
 the original data->
+
+
+swap 2 and 2
+After swap3
+
+
 the original data->
+
+
+swap 2 and 0
+After swap3
+
+
 the original data->
+
+
 the original data->
+
+
+swap 6 and 4
+After swap3
+
+
 the original data->
+
+
+swap 4 and 3
+After swap3
+
+
 the original data->
+
+
 the original data->
+
+

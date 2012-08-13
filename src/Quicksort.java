@@ -26,45 +26,45 @@ public class Quicksort {
 				right--;
 			while (left < right && right < rightStore && data[right] == pivot) {
 				swap(right--, rightStore--);
-				System.out.println("After swap1");
+				log.Append("After swap1");
 				Print(low, high);
 			}
 			while (left < right && data[left] < pivot)
 				left++;
 			while (left < right && leftStore < left && data[left] == pivot) {
 				swap(left++, leftStore++);
-				System.out.println("After swap2");
+				log.Append("After swap2");
 				Print(low, high);
 			}
 			if (left < right) {
 				swap(left++, right--);
-				System.out.println("After swap3");
+				log.Append("After swap3");
 				Print(low, high);
 			}
 		}
 		while (leftStore > low) {
 			swap(leftStore--, left--);
-			System.out.println("After swap4");
+			log.Append("After swap4");
 			Print(low, high);
 		}
 		while (rightStore < high) {
 			swap(rightStore++, right++);
-			System.out.println("After swap5");
+			log.Append("After swap5");
 			Print(low, high);
 		}
 		leftP = left - 1;
 		rightP = right + 1;
 	}
 
-	public void Print() {
+	public void Print() throws IOException {
 		Print(0, data.length - 1);
 	}
 
-	public void Print(int l, int r) {
+	public void Print(int l, int r) throws IOException {
 		for (int i = l; i <= r; i++) {
 			System.out.print(data[i] + ",");
 		}
-		System.out.println();
+		log.Append();
 	}
 
 	void Sort() throws IOException {
@@ -80,9 +80,9 @@ public class Quicksort {
 		}
 	}
 
-	void swap(int i, int j) {
+	void swap(int i, int j) throws IOException {
 		if (i != j) {
-			System.out.println("swap " + data[i] + " and " + data[j]);
+			log.Append("swap " + data[i] + " and " + data[j]);
 			data[i] ^= data[j];
 			data[j] ^= data[i];
 			data[i] ^= data[j];
