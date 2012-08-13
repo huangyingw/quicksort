@@ -62,7 +62,7 @@ public class Quicksort {
 
 	public void Print(int l, int r) throws IOException {
 		for (int i = l; i <= r; i++) {
-			System.out.print(data[i] + ",");
+			log.Append(data[i] + ",");
 		}
 		log.Appendln();
 	}

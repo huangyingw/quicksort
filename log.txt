@@ -1,4 +1,44 @@
-I love you
-I love you
-I love you
-I love you,I love you,I love you,I love you,I love you,
+the original data->
+3,1,2,0,6,2,5,4,
+
+swap 3 and 2
+After swap3
+2,1,2,0,6,3,5,4,
+
+the original data->
+2,1,2,
+
+swap 2 and 2
+After swap3
+2,1,2,
+
+the original data->
+2,0,6,3,5,4,
+
+swap 2 and 0
+After swap3
+0,2,6,3,5,4,
+
+the original data->
+2,6,3,5,4,
+
+the original data->
+6,3,5,4,
+
+swap 6 and 4
+After swap3
+4,3,5,6,
+
+the original data->
+4,3,
+
+swap 4 and 3
+After swap3
+3,4,
+
+the original data->
+4,5,6,
+
+the original data->
+5,6,
+
