@@ -3,9 +3,9 @@ import java.io.IOException;
 public class Quicksort {
 	int[] data;
 	private int leftP;
+	private Log log;
 	private int rightP;
 	int size;
-	private Log log;
 
 	public Quicksort(int[] data, String name) throws IOException {
 		// TODO Auto-generated constructor stub
@@ -14,9 +14,6 @@ public class Quicksort {
 	}
 
 	void Partition(int low, int high) throws IOException {
-		// Random random = new Random();
-		// int s = random.nextInt(j) % (j - i + 1) + i;
-		// int pivot = data[s];
 		log.Appendln("the original data->");
 		Print(low, high);
 		int pivot = data[low];
@@ -24,7 +21,7 @@ public class Quicksort {
 		while (left < right) {
 			while (left < right && data[right] > pivot)
 				right--;
-			while (left < right && right < rightStore && data[right] == pivot) {
+			while (left < right && right < rightStore -1 && data[right] == pivot) {
 				swap(right--, rightStore--);
 				log.Appendln("After swap1");
 				Print(low, high);
@@ -52,8 +49,15 @@ public class Quicksort {
 			log.Appendln("After swap5");
 			Print(low, high);
 		}
-		leftP = left - 1;
+    if(left==right){
+      leftP=left;
+    }else {
+      leftP = left;
+    }
 		rightP = right + 1;
+		log.Append("the left->"+left+", the right->"+right);
+		log.Appendln(",the leftP: data[" + leftP + "]->" + data[leftP] + ", and the rightP data["
+				+ rightP + "]->" + data[rightP]);
 	}
 
 	public void Print() throws IOException {
@@ -82,7 +86,8 @@ public class Quicksort {
 
 	void swap(int i, int j) throws IOException {
 		if (i != j) {
-			log.Appendln("swap " + data[i] + " and " + data[j]);
+			log.Appendln("swap data[" + i + "]->" + data[i] + " and data[" + j
+					+ "]->" + data[j]);
 			data[i] ^= data[j];
 			data[j] ^= data[i];
 			data[i] ^= data[j];
