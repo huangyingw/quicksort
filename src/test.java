@@ -34,5 +34,10 @@ public class test {
 		qs = new quicksort(data);
 		qs.Sort();
 		System.out.println(qs.toString());
+
+		data = new int[] { 3, 2, 2, 2, 1 };
+		qs = new quicksort(data);
+		qs.Sort();
+		System.out.println(qs.toString());
 	}
 }
