@@ -13,12 +13,12 @@ public class Quick3way {
 		if (high <= low)
 			return;
 		int lt = low, gt = high;
-		int v = data[low];
+		int pivot = data[low];
 		int nav = low;
 		while (nav <= gt) {
-			if (data[nav] < v)
+			if (data[nav] < pivot)
 				exch(lt++, nav++);
-			else if (data[nav] > v)
+			else if (data[nav] > pivot)
 				exch(nav, gt--);
 			else
 				nav++;
@@ -28,9 +28,9 @@ public class Quick3way {
 	}
 
 	private void exch(int i, int j) {
-		int swap = data[i];
-		data[i] = data[j];
-		data[j] = swap;
+		data[i] ^= data[j];
+		data[j] ^= data[i];
+		data[i] ^= data[j];
 	}
 
 	private void show() {
