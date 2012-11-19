@@ -1,21 +1,8 @@
 public class quicksort {
 	int[] data;
-	int size;
 
-	public quicksort(int len) {
-		size = len;
-		data = new int[size];
-	}
-
-	public quicksort(int[] data, int size) {
-		super();
+	public quicksort(int[] data) {
 		this.data = data;
-		this.size = size;
-	}
-
-	public quicksort(int[] data2) {
-		// TODO Auto-generated constructor stub
-		this.data = data2;
 	}
 
 	int Partition(int low, int high) {
@@ -25,8 +12,7 @@ public class quicksort {
 		while (i < j) {
 			while (j > low && data[j] >= pivot)
 				j--;
-
-			while (data[i] < pivot)
+			while (i < high && data[i] <= pivot)
 				i++;
 			if (i < j) {
 				swap(i, j);
@@ -39,6 +25,28 @@ public class quicksort {
 		Sort(0, data.length - 1);
 	}
 
+	void ThreeSort() {
+		ThreeSort(0, data.length - 1);
+	}
+
+	void ThreeSort(int low, int high) {
+		if (high <= low)
+			return;
+		int lt = low, gt = high;
+		int pivot = data[low];
+		int nav = low;
+		while (nav <= gt) {
+			if (data[nav] < pivot)
+				swap(lt++, nav++);
+			else if (data[nav] > pivot)
+				swap(nav, gt--);
+			else
+				nav++;
+		}
+		ThreeSort(low, lt - 1);
+		ThreeSort(gt + 1, high);
+	}
+
 	void Sort(int low, int high) {
 		if (low < high) {
 			int pivot;
@@ -49,9 +57,11 @@ public class quicksort {
 	}
 
 	void swap(int i, int j) {
-		data[i] ^= data[j];
-		data[j] ^= data[i];
-		data[i] ^= data[j];
+		if (i != j) {
+			data[i] ^= data[j];
+			data[j] ^= data[i];
+			data[i] ^= data[j];
+		}
 	}
 
 	public String toString() {
@@ -61,4 +71,5 @@ public class quicksort {
 		}
 		return result;
 	}
+
 }
