@@ -125,7 +125,7 @@ public class QuickX {
 
 		// generate array of N random reals between 0 and 1
 		// int N = Integer.parseInt(args[0]);
-		int N = 15;
+		int N = 55;
 		Double[] a = new Double[N];
 		for (int i = 0; i < N; i++) {
 			a[i] = Math.random();
