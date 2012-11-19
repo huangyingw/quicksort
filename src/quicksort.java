@@ -23,7 +23,7 @@ public class quicksort {
 		int i = low;
 		int j = high;
 		while (i < j) {
-			while (data[j] > pivot)
+			while (j > low && data[j] >= pivot)
 				j--;
 
 			while (data[i] < pivot)
