@@ -18,8 +18,10 @@ public class quicksort {
 		this.data = data2;
 	}
 
-	int Partition(int i, int j) {
-		int pivot = data[i];
+	int Partition(int low, int high) {
+		int pivot = data[low];
+		int i = low;
+		int j = high;
 		while (i < j) {
 			while (data[j] > pivot)
 				j--;

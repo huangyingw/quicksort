@@ -3,8 +3,8 @@ public class test {
 		int[] data = { 3, 1, 2, 0, 6, 5, 4 };
 
 		quicksort qs = new quicksort(data);
-		// qs.Sort();
-		// System.out.println(qs.toString());
+		qs.Sort();
+		System.out.println(qs.toString());
 		//
 		// data = new int[] { 1 };
 		// qs = new quicksort(data);
