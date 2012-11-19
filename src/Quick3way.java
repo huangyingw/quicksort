@@ -1,43 +1,48 @@
-
 public class Quick3way {
+	int[] data;
 
-	public static void sort(int[] a) {
-		sort(a, 0, a.length - 1);
+	public Quick3way(int[] data) {
+		this.data = data;
 	}
 
-	private static void sort(int[] a, int lo, int hi) {
+	public void sort() {
+		sort(0, data.length - 1);
+	}
+
+	private void sort(int lo, int hi) {
 		if (hi <= lo)
 			return;
 		int lt = lo, gt = hi;
-		int v = a[lo];
+		int v = data[lo];
 		int i = lo;
 		while (i <= gt) {
-			if (a[i] < v)
-				exch(a, lt++, i++);
-			else if (a[i] > v)
-				exch(a, i, gt--);
+			if (data[i] < v)
+				exch(lt++, i++);
+			else if (data[i] > v)
+				exch(i, gt--);
 			else
 				i++;
 		}
-		sort(a, lo, lt - 1);
-		sort(a, gt + 1, hi);
+		sort(lo, lt - 1);
+		sort(gt + 1, hi);
 	}
 
-	private static void exch(int[] a, int i, int j) {
-		int swap = a[i];
-		a[i] = a[j];
-		a[j] = swap;
+	private void exch(int i, int j) {
+		int swap = data[i];
+		data[i] = data[j];
+		data[j] = swap;
 	}
 
-	private static void show(int[] a) {
-		for (int i = 0; i < a.length; i++) {
-			System.out.print(a[i] + ",");
+	private void show() {
+		for (int i = 0; i < data.length; i++) {
+			System.out.print(data[i] + ",");
 		}
 	}
 
 	public static void main(String[] args) {
-		int[] a = { 7, 6, 5, 5, 4, 4, 3, 2, 2, 1 };
-		Quick3way.sort(a);
-		show(a);
+		int[] data = { 7, 6, 5, 5, 4, 4, 3, 2, 2, 1 };
+		Quick3way q3 = new Quick3way(data);
+		q3.sort();
+		q3.show();
 	}
 }
