@@ -1,21 +1,8 @@
 public class quicksort {
 	int[] data;
-	int size;
 
-	public quicksort(int len) {
-		size = len;
-		data = new int[size];
-	}
-
-	public quicksort(int[] data, int size) {
-		super();
+	public quicksort(int[] data) {
 		this.data = data;
-		this.size = size;
-	}
-
-	public quicksort(int[] data2) {
-		// TODO Auto-generated constructor stub
-		this.data = data2;
 	}
 
 	int Partition(int i, int j) {
@@ -42,21 +29,21 @@ public class quicksort {
 	}
 
 	void ThreeSort(int low, int high) {
-		if (low < high) {
-			int lt = low, gt = high;
-			int nav = low;
-			int pivot = data[low];
-			while (nav <= gt) {
-				if (data[nav] < pivot)
-					swap(lt++, nav++);
-				else if (data[nav] > pivot)
-					swap(nav, gt--);
-				else
-					nav++;
-			}
-			ThreeSort(low, lt - 1);
-			ThreeSort(gt + 1, high);
+		if (high <= low)
+			return;
+		int lt = low, gt = high;
+		int pivot = data[low];
+		int nav = low;
+		while (nav <= gt) {
+			if (data[nav] < pivot)
+				swap(lt++, nav++);
+			else if (data[nav] > pivot)
+				swap(nav, gt--);
+			else
+				nav++;
 		}
+		ThreeSort(low, lt - 1);
+		ThreeSort(gt + 1, high);
 	}
 
 	void Sort(int low, int high) {
@@ -80,5 +67,12 @@ public class quicksort {
 			result += Integer.toString(data[i]) + ",";
 		}
 		return result;
+	}
+
+	public static void main(String[] args) {
+		int[] data = { 7, 6, 5, 5, 4, 4, 3, 2, 2, 1 };
+		quicksort q3 = new quicksort(data);
+		q3.ThreeSort();
+		System.out.println(q3.toString());
 	}
 }

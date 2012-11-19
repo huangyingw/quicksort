@@ -5,7 +5,7 @@ public class Test {
 		int[] data = { 3, 1, 7, 0, 6, 2, 5, 4 };
 		quicksort qs = new quicksort(data);
 		// qs.Sort();
-		qs.ThreeSort(0, data.length - 1);
+		qs.ThreeSort();
 		System.out.println(qs.toString());
 	}
 }
