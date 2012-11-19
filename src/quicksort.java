@@ -7,16 +7,14 @@ public class quicksort {
 
 	int Partition(int low, int high) {
 		int pivot = data[low];
-		int i = low;
-		int j = high;
-		while (i < j && data[j] >= pivot)
-			j--;
-		while (i < j && data[i] <= pivot)
-			i++;
-		if (i < j) {
-			swap(i, j);
+		while (low < high && data[high] >= pivot)
+			high--;
+		while (low < high && data[low] <= pivot)
+			low++;
+		if (low < high) {
+			swap(low, high);
 		}
-		return i;
+		return low;
 	}
 
 	void Sort() {
