@@ -6,6 +6,8 @@ public class quicksort {
 	}
 
 	int Partition(int low, int high) {
+		if (high <= low)
+			return low;
 		int pivot = data[low];
 		while (low < high && data[high] >= pivot)
 			high--;
