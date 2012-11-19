@@ -1,11 +1,23 @@
 import java.io.IOException;
 
 public class Test {
-	static public void main(String[] args) throws IOException {
-		int[] data = { 3, 1, 7, 0, 6, 2, 5, 4 };
-		quicksort qs = new quicksort(data);
-		// qs.Sort();
-		qs.ThreeSort();
-		System.out.println(qs.toString());
+	public static void main(String[] args) {
+		int[] data = { 7, 6, 5, 5, 4, 4, 3, 2, 2, 1 };
+		quicksort q3 = new quicksort(data);
+
+		data = new int[] { 7, 6, 5, 5, 4, 4, 3, 2, 2, 1 };
+		q3 = new quicksort(data);
+		q3.ThreeSort();
+		System.out.println(q3.toString());
+
+		data = new int[] { 3, 1, 7, 0, 6, 2, 5, 4 };
+		q3 = new quicksort(data);
+		q3.ThreeSort();
+		System.out.println(q3.toString());
+
+		data = new int[] { 3, 1, 7, 0, 6, 2, 5, 4 };
+		q3 = new quicksort(data);
+		q3.Sort();
+		System.out.println(q3.toString());
 	}
 }
