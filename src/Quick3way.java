@@ -9,22 +9,22 @@ public class Quick3way {
 		sort(0, data.length - 1);
 	}
 
-	private void sort(int lo, int hi) {
-		if (hi <= lo)
+	private void sort(int low, int high) {
+		if (high <= low)
 			return;
-		int lt = lo, gt = hi;
-		int v = data[lo];
-		int i = lo;
-		while (i <= gt) {
-			if (data[i] < v)
-				exch(lt++, i++);
-			else if (data[i] > v)
-				exch(i, gt--);
+		int lt = low, gt = high;
+		int v = data[low];
+		int nav = low;
+		while (nav <= gt) {
+			if (data[nav] < v)
+				exch(lt++, nav++);
+			else if (data[nav] > v)
+				exch(nav, gt--);
 			else
-				i++;
+				nav++;
 		}
-		sort(lo, lt - 1);
-		sort(gt + 1, hi);
+		sort(low, lt - 1);
+		sort(gt + 1, high);
 	}
 
 	private void exch(int i, int j) {
