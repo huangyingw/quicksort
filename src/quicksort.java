@@ -56,9 +56,11 @@ public class quicksort {
 	}
 
 	void swap(int i, int j) {
-		data[i] ^= data[j];
-		data[j] ^= data[i];
-		data[i] ^= data[j];
+		if (i != j) {
+			data[i] ^= data[j];
+			data[j] ^= data[i];
+			data[i] ^= data[j];
+		}
 	}
 
 	public String toString() {
@@ -72,6 +74,14 @@ public class quicksort {
 	public static void main(String[] args) {
 		int[] data = { 7, 6, 5, 5, 4, 4, 3, 2, 2, 1 };
 		quicksort q3 = new quicksort(data);
+
+		data = new int[] { 7, 6, 5, 5, 4, 4, 3, 2, 2, 1 };
+		q3 = new quicksort(data);
+		q3.ThreeSort();
+		System.out.println(q3.toString());
+
+		data = new int[] { 3, 1, 7, 0, 6, 2, 5, 4 };
+		q3 = new quicksort(data);
 		q3.ThreeSort();
 		System.out.println(q3.toString());
 	}
