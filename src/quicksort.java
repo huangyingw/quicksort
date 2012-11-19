@@ -9,14 +9,12 @@ public class quicksort {
 		int pivot = data[low];
 		int i = low;
 		int j = high;
-		while (i < j) {
-			while (j > low && data[j] >= pivot)
-				j--;
-			while (i < high && data[i] <= pivot)
-				i++;
-			if (i < j) {
-				swap(i, j);
-			}
+		while (i < j && data[j] >= pivot)
+			j--;
+		while (i < j && data[i] <= pivot)
+			i++;
+		if (i < j) {
+			swap(i, j);
 		}
 		return i;
 	}
