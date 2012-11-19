@@ -5,13 +5,14 @@ public class quicksort {
 		this.data = data;
 	}
 
-	int Partition(int i, int j) {
-		int pivot = data[i];
+	int Partition(int low, int high) {
+		int pivot = data[low];
+		int i = low;
+		int j = high;
 		while (i < j) {
-			while (data[j] > pivot)
+			while (j > low && data[j] >= pivot)
 				j--;
-
-			while (data[i] < pivot)
+			while (i < high && data[i] <= pivot)
 				i++;
 			if (i < j) {
 				swap(i, j);
