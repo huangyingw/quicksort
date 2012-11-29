@@ -28,6 +28,8 @@ public class Quick3way {
 	}
 
 	private void exch(int i, int j) {
+		if (i == j)
+			return;
 		data[i] ^= data[j];
 		data[j] ^= data[i];
 		data[i] ^= data[j];
